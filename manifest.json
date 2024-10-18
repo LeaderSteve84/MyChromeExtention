@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Grouper",
+  "version": "1.0",
+  "description": "Groups tabs for better organization.",
+  "permissions": ["tabs", "storage", "alarms"],
+  "action": {
+       "default_popup": "popup.html",
+       "default_title": "Tab History"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
